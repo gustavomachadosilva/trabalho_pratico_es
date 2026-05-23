@@ -1,0 +1,70 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[left=3cm, top=3cm, right=2cm, bottom=2cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage{indentfirst}
+\usepackage{float}
+\usepackage[hidelinks]{hyperref}
+\graphicspath{ {./images/} }
+\usepackage{minted}
+\usepackage{caption}
+\usepackage{titlesec}
+\usepackage{makecell}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage[style=abnt, backend=biber]{biblatex}
+\addbibresource{referencias.bib}
+
+\lstset{
+  basicstyle=\ttfamily\tiny,
+  keywordstyle=\color{blue},
+  commentstyle=\color{green!50!black},
+  stringstyle=\color{red},
+  numbers=left,
+  numberstyle=\tiny,
+  stepnumber=1,
+  numbersep=8pt,
+  showstringspaces=false,
+  breaklines=true,
+  frame=single,
+  tabsize=4
+}
+% Define o tamanho da section para \small (pequeno) e negrito (\bfseries)
+
+
+
+
+% formatação da numeração de páginas
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+
+\begin{document}
+
+\include{capa}
+
+% contents
+\newpage
+\thispagestyle{empty}
+\tableofcontents
+
+
+% SECTIONS ==================================
+\include{sections/introducao}
+\include{sections/desk_research}
+\include{sections/benchmark}
+\include{sections/requisitos}
+\include{sections/diagramas}
+
+\nocite{*}
+\printbibliography[heading=bibintoc]
+
+\end{document}
