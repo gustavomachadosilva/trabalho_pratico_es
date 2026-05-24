@@ -1,0 +1,18 @@
+\newpage
+\section{Arquitetura}
+Para esse projeto, decidimos seguir com uma arquitetura de camadas. O motivo da escolha foi devido a clareza estrutural que essa arquitetura apresenta, possibilitando uma facilidade na manutenção e adequação ao escopo do projeto.
+O projeto possui responsabilidades bem distintas e a separação em camadas com cada uma tendo um escopo bem definido, ajuda a diminuir o acoplamento entre módulos e a evolução independente de cada parte do sistema.
+
+
+\begin{itemize}
+    \item \textbf{Camada de Apresentação (Frontend)}: Para a camada de apresentação as tecnologias escolhidas foram o framework React para desenvolvimento web e o framework React Native para desenvolvimento mobile (multiplataforma). Ambos os frameworks podem ser utilizados com a linguagem JavaScript, o que facilita na hora de compartilhar lógicas e funções.
+    \item \textbf{Camada de Aplicação (Backend/API)}: Para a camada de aplicação, optamos pela utilização do Python devido ao time ter mais afinidade com a linguagem. O framework escolhido foi o Django pois funciona bem para a criação de API REST e já possui suporte para WebSocket para o chat ao vivo vida Django Channels.
+    \item \textbf{Camada de Negócio (Business Logic)}: Essa camada tem como função isolar as regras de negócio da aplicação.
+    \item \textbf{Camada de Dados}: Optamos por utilizar um banco de dados relacional pois acreditamos que se adequa melhor ao sistema que estamos propondo. Utilizaremos o PostgreSQL como banco de dados.
+    \item \textbf{Integrações Externas}: Algumas ferramentas são essenciais para facilitar a implementação e isolar comportamentos.
+        \begin{itemize}
+            \item \textbf{Jitsi Meet}: Plataforma de videoconferência open source que pode ser integrada facilmente via SDK. Permite a personalização da interface, o que é interessante para a adaptação ao público alvo.
+            \item \textbf{Firebase Cloud Messaging (FCM)}: Serviço de notificação em dispositivos móveis. O backend envia o comando para o FCM que realiza o disparo da notificação mesmo com o aplicativo fechado. Possui SDK para React Native.
+            \item \textbf{AWS S3}: Serviço para armazenar arquivos em nuvem. Ideal para manter os vídeos e outros arquivos que serão disponibilizados no sistema.
+        \end{itemize}
+\end{itemize}
