@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.23)  25 MAY 2026 08:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.23)  25 MAY 2026 20:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1055,7 +1055,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 LaTeX Warning: Empty bibliography on input line 70.
 
-runsystem(latexminted cleantemp  --timestamp 20260525082250 FAD58DE7366495DB4650CFEFAC2FCD61)...executed safely (allowed).
+runsystem(latexminted cleantemp  --timestamp 20260525201214 FAD58DE7366495DB4650CFEFAC2FCD61)...executed safely (allowed).
 
 (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/main.aux (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/capa.aux) (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/sections/introducao.aux) (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/sections/desk_research.aux) (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/sections/benchmark.aux) (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/sections/requisitos.aux) (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/sections/diagramas.aux) (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/sections/diagramas2.aux) (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/sections/arquitetura.aux))
  ***********
@@ -1080,13 +1080,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  25950 strings out of 467525
  512010 string characters out of 5418982
- 1512231 words of memory out of 5000000
+ 1511231 words of memory out of 5000000
  54423 multiletter control sequences out of 15000+600000
  632312 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  78i,11n,79p,963b,2366s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on "/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/main.pdf" (22 pages, 928126 bytes).
+Output written on "/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/main.pdf" (22 pages, 928130 bytes).
 PDF statistics:
  349 PDF objects out of 1000 (max. 8388607)
  300 compressed objects within 3 object streams

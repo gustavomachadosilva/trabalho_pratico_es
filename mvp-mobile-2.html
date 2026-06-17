@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VivaMais – Mobile</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --verde: #2d7a4f;
+    --verde-claro: #e8f5ee;
+    --verde-medio: #4aab72;
+    --laranja: #e8803a;
+    --laranja-claro: #fff3eb;
+    --amarelo: #f5c842;
+    --cinza-fundo: #f4f5f7;
+    --cinza-borda: #e0ddd5;
+    --texto: #2a2520;
+    --texto-suave: #6b6560;
+    --branco: #ffffff;
+    --sombra: 0 2px 12px rgba(0,0,0,0.08);
+    --sombra-forte: 0 6px 24px rgba(0,0,0,0.13);
+    --radius: 18px;
+    --radius-lg: 24px;
+    --tab-h: 72px;
+    --header-h: 60px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+  /* ── PHONE SHELL (desktop preview) ── */
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: #2a2520;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+  .phone-shell {
+    width: 390px;
+    height: 844px;
+    background: var(--cinza-fundo);
+    border-radius: 48px;
+    overflow: hidden;
+    position: relative;
+    box-shadow:
+      0 0 0 10px #1a1510,
+      0 0 0 12px #3a3028,
+      0 40px 80px rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+  }
+  /* notch */
+  .phone-notch {
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 120px; height: 34px;
+    background: #1a1510;
+    border-radius: 0 0 20px 20px;
+    z-index: 999;
+  }
+
+  /* ── STATUS BAR ── */
+  .status-bar {
+    height: 44px;
+    background: var(--verde);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0 28px 8px;
+    flex-shrink: 0;
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .status-time { font-size: 15px; font-weight: 900; }
+  .status-icons { display: flex; gap: 5px; align-items: center; font-size: 14px; }
+
+  /* ── HEADER ── */
+  .app-header {
+    background: var(--verde);
+    height: var(--header-h);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    flex-shrink: 0;
+    box-shadow: 0 2px 12px rgba(45,122,79,0.3);
+  }
+  .header-logo {
+    font-family: 'Lora', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: white;
+  }
+  .header-logo span { color: var(--amarelo); }
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .header-avatar {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--amarelo);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px;
+    font-weight: 900;
+    color: var(--verde);
+  }
+  .header-role {
+    background: rgba(255,255,255,0.18);
+    color: rgba(255,255,255,0.9);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: none;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  /* ── SCROLL AREA ── */
+  .scroll-area {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+  .scroll-area::-webkit-scrollbar { display: none; }
+
+  /* ── PAGES ── */
+  .page { display: none; padding: 20px 16px 12px; animation: fadein 0.25s ease; }
+  .page.active { display: block; }
+  @keyframes fadein { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+
+  .page-title {
+    font-family: 'Lora', serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--texto);
+  }
+  .page-subtitle {
+    font-size: 14px;
+    color: var(--texto-suave);
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+
+  /* ── BOTTOM TABS ── */
+  .bottom-tabs {
+    height: var(--tab-h);
+    background: var(--branco);
+    border-top: 1.5px solid var(--cinza-borda);
+    display: flex;
+    flex-shrink: 0;
+  }
+  .tab-btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 4px;
+    transition: all 0.15s;
+    color: var(--texto-suave);
+    font-family: 'Nunito', sans-serif;
+  }
+  .tab-btn .tab-icon { font-size: 22px; line-height: 1; }
+  .tab-btn .tab-label { font-size: 11px; font-weight: 700; }
+  .tab-btn.active { color: var(--verde); }
+  .tab-btn.active .tab-icon { transform: scale(1.15); }
+
+  /* ══════════════════════════════════════
+     PÁGINA 1 — CALENDÁRIO
+  ══════════════════════════════════════ */
+  .cal-nav-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  .cal-arrow {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--cinza-borda);
+    background: var(--branco);
+    font-size: 18px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--verde);
+    transition: all 0.15s;
+  }
+  .cal-arrow:active { background: var(--verde); color: white; }
+  .cal-month-label {
+    font-family: 'Lora', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--texto);
+  }
+
+  .cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-bottom: 20px;
+  }
+  .cal-hdr {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--texto-suave);
+    padding: 6px 0;
+    text-transform: uppercase;
+  }
+  .cal-cell {
+    background: var(--branco);
+    border: 2px solid var(--cinza-borda);
+    border-radius: 12px;
+    min-height: 52px;
+    padding: 7px 5px 5px;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+  }
+  .cal-cell:active { transform: scale(0.94); }
+  .cal-cell.empty { background: transparent; border-color: transparent; cursor: default; }
+  .cal-cell.today {
+    border-color: var(--verde);
+    border-width: 2.5px;
+    background: var(--verde-claro);
+  }
+  .cal-cell.has-event {
+    border-color: var(--laranja);
+    border-width: 2.5px;
+    background: #fffaf6;
+  }
+  .cal-cell.selected {
+    border-color: var(--verde);
+    border-width: 2.5px;
+    background: var(--verde-claro);
+    box-shadow: var(--sombra);
+  }
+  .cell-num {
+    font-size: 15px;
+    font-weight: 900;
+    color: var(--texto);
+    line-height: 1;
+  }
+  .cal-cell.today .cell-num { color: var(--verde); }
+  .cell-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--laranja);
+  }
+  .cell-dot.verde { background: var(--verde); }
+
+  /* Sessões do dia */
+  .sessions-title {
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--texto);
+    margin-bottom: 12px;
+  }
+  .session-card-m {
+    background: var(--branco);
+    border-radius: var(--radius);
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: var(--sombra);
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    border-left: 4px solid var(--verde);
+    transition: all 0.15s;
+  }
+  .session-card-m:active { transform: scale(0.98); }
+  .session-card-m.laranja { border-left-color: var(--laranja); }
+  .session-card-m.cinza { border-left-color: var(--cinza-borda); }
+  .s-time-block {
+    background: var(--verde);
+    color: white;
+    border-radius: 12px;
+    padding: 10px 10px;
+    text-align: center;
+    min-width: 60px;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .session-card-m.laranja .s-time-block { background: var(--laranja); }
+  .session-card-m.cinza .s-time-block { background: #aaa; }
+  .s-info { flex: 1; min-width: 0; }
+  .s-info h4 { font-size: 15px; font-weight: 900; margin-bottom: 3px; color: var(--texto); }
+  .s-info p { font-size: 13px; color: var(--texto-suave); font-weight: 600; margin-bottom: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .s-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .s-vagas {
+    font-size: 12px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 50px;
+    background: var(--cinza-fundo);
+    color: var(--texto-suave);
+  }
+  .s-vagas.quase { background: var(--laranja-claro); color: var(--laranja); }
+  .s-vagas.lotado { background: #fdf2f2; color: #c0392b; }
+  .btn-inscrever-m {
+    background: var(--laranja);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 14px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .btn-inscrever-m:active { transform: scale(0.95); }
+  .btn-inscrever-m:disabled { background: var(--cinza-borda); color: var(--texto-suave); cursor: not-allowed; }
+
+  .tip-banner {
+    background: var(--verde-claro);
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--verde);
+    margin-bottom: 16px;
+    display: flex; gap: 8px; align-items: center;
+  }
+
+  /* ══════════════════════════════════════
+     PÁGINA 2 — MURAL
+  ══════════════════════════════════════ */
+  .mural-card-m {
+    background: var(--branco);
+    border-radius: var(--radius-lg);
+    margin-bottom: 16px;
+    box-shadow: var(--sombra);
+    overflow: hidden;
+    border: 2px solid var(--cinza-borda);
+    transition: all 0.15s;
+  }
+  .mural-card-m.hoje-c { border-color: var(--amarelo); }
+  .mural-card-m.proxima-c { border-color: var(--laranja); }
+  .card-stripe-m {
+    height: 6px;
+    background: var(--verde);
+  }
+  .mural-card-m.hoje-c .card-stripe-m { background: var(--amarelo); }
+  .mural-card-m.proxima-c .card-stripe-m { background: var(--laranja); }
+
+  .card-body-m { padding: 16px 16px 0; }
+  .m-badge {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 11px; font-weight: 800;
+    padding: 4px 10px; border-radius: 50px;
+    margin-bottom: 8px;
+    text-transform: uppercase; letter-spacing: 0.4px;
+  }
+  .badge-a { background: var(--verde-claro); color: var(--verde); }
+  .badge-h { background: #fff3cd; color: #856404; }
+  .badge-p { background: var(--laranja-claro); color: var(--laranja); }
+
+  .mural-card-m h3 { font-size: 17px; font-weight: 900; margin-bottom: 12px; color: var(--texto); line-height: 1.2; }
+
+  .info-chips {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .chip {
+    background: var(--cinza-fundo);
+    border-radius: 12px;
+    padding: 10px 12px;
+    display: flex; flex-direction: column; gap: 1px;
+  }
+  .chip.full { grid-column: span 2; }
+  .chip.dest { background: var(--verde-claro); }
+  .chip .lbl { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: var(--texto-suave); }
+  .chip .val { font-size: 18px; font-weight: 900; color: var(--texto); line-height: 1.1; }
+  .chip.dest .val { color: var(--verde); }
+  .chip .sub { font-size: 12px; font-weight: 600; color: var(--texto-suave); }
+  .vagas-bar-m {
+    height: 5px; background: var(--cinza-borda);
+    border-radius: 99px; margin-top: 5px; overflow: hidden;
+  }
+  .vagas-fill-m { height: 100%; border-radius: 99px; background: var(--verde); }
+  .vagas-fill-m.quase { background: var(--laranja); }
+  .vagas-fill-m.lotado { background: #e74c3c; }
+
+  .card-tutor-m {
+    display: flex; align-items: center; gap: 8px;
+    padding: 0 16px 14px;
+    font-size: 13px; font-weight: 700; color: var(--texto-suave);
+  }
+  .tutor-av-m {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--verde-claro);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px;
+  }
+
+  .card-actions-m {
+    display: flex;
+    border-top: 1.5px solid var(--cinza-borda);
+  }
+  .btn-cancel-m {
+    flex: 1; background: transparent; border: none;
+    border-right: 1.5px solid var(--cinza-borda);
+    color: var(--texto-suave); padding: 14px 10px;
+    font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700;
+    cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 5px;
+    transition: all 0.15s;
+  }
+  .btn-cancel-m:active { background: #fdf2f2; color: #e74c3c; }
+  .btn-enter-m {
+    flex: 1; background: var(--verde); color: white; border: none;
+    padding: 14px 10px; font-family: 'Nunito', sans-serif;
+    font-size: 14px; font-weight: 900; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    transition: all 0.15s;
+  }
+  .btn-enter-m:active { background: #225e3c; }
+  .btn-only-cancel-m {
+    width: 100%; background: transparent; border: none;
+    color: var(--texto-suave); padding: 14px;
+    font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700;
+    cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 5px;
+  }
+  .btn-only-cancel-m:active { background: #fdf2f2; color: #e74c3c; }
+
+  /* ══════════════════════════════════════
+     PÁGINA 3 — AO VIVO
+  ══════════════════════════════════════ */
+  .live-card {
+    background: var(--verde);
+    border-radius: var(--radius-lg);
+    padding: 28px 22px;
+    color: white;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--sombra-forte);
+  }
+  .live-card::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 160px; height: 160px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .live-pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--amarelo); color: var(--texto);
+    padding: 5px 14px; border-radius: 50px;
+    font-size: 12px; font-weight: 900;
+    text-transform: uppercase; letter-spacing: 0.4px;
+    margin-bottom: 14px;
+  }
+  .live-dot-m {
+    width: 8px; height: 8px; background: #e74c3c;
+    border-radius: 50%; animation: pulse 1.2s infinite;
+  }
+  @keyframes pulse {
+    0%,100%{opacity:1;transform:scale(1)}
+    50%{opacity:0.5;transform:scale(1.4)}
+  }
+  .live-card h2 {
+    font-family: 'Lora', serif; font-size: 22px;
+    font-weight: 600; margin-bottom: 8px; position: relative; z-index: 1;
+  }
+  .live-card p { font-size: 14px; opacity: 0.88; margin-bottom: 20px; position: relative; z-index: 1; line-height: 1.5; }
+  .btn-live-enter {
+    width: 100%; background: white; color: var(--verde);
+    border: none; border-radius: 14px; padding: 16px;
+    font-family: 'Nunito', sans-serif; font-size: 18px; font-weight: 900;
+    cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    position: relative; z-index: 1;
+    transition: all 0.15s;
+  }
+  .btn-live-enter:active { transform: scale(0.97); }
+
+  .offline-card {
+    background: var(--branco); border-radius: var(--radius-lg);
+    padding: 36px 22px; text-align: center;
+    margin-bottom: 20px; box-shadow: var(--sombra);
+  }
+  .offline-card .icon { font-size: 52px; margin-bottom: 12px; }
+  .offline-card h2 { font-family: 'Lora', serif; font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+  .offline-card p { font-size: 14px; color: var(--texto-suave); font-weight: 600; }
+
+  .proximas-title {
+    font-family: 'Lora', serif; font-size: 17px;
+    font-weight: 600; margin-bottom: 12px; color: var(--texto);
+  }
+  .proxima-row-m {
+    background: var(--branco); border-radius: var(--radius);
+    padding: 14px 16px; display: flex; align-items: center;
+    gap: 14px; margin-bottom: 10px; box-shadow: var(--sombra);
+  }
+  .date-blk {
+    background: var(--verde-claro); border-radius: 10px;
+    padding: 8px 10px; text-align: center; min-width: 52px;
+  }
+  .date-blk .mes { font-size: 10px; font-weight: 800; color: var(--verde); text-transform: uppercase; }
+  .date-blk .dia { font-size: 22px; font-weight: 900; color: var(--verde); line-height: 1; }
+  .proxima-info { flex: 1; }
+  .proxima-info h4 { font-size: 14px; font-weight: 900; margin-bottom: 2px; }
+  .proxima-info p { font-size: 12px; color: var(--texto-suave); font-weight: 600; }
+  .countdown-m {
+    background: var(--laranja-claro); border-radius: 8px;
+    padding: 5px 10px; font-size: 12px; font-weight: 700; color: var(--laranja);
+    white-space: nowrap;
+  }
+
+  .sim-btn {
+    width: 100%; margin-bottom: 16px;
+    background: var(--cinza-fundo); border: 1.5px solid var(--cinza-borda);
+    border-radius: 10px; padding: 10px;
+    font-family: 'Nunito', sans-serif; font-size: 12px;
+    cursor: pointer; color: var(--texto-suave); font-weight: 700;
+  }
+
+  /* ══════════════════════════════════════
+     MODAIS (bottom sheet style)
+  ══════════════════════════════════════ */
+  .modal-overlay-m {
+    display: none;
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 300;
+    align-items: flex-end;
+    backdrop-filter: blur(2px);
+  }
+  .modal-overlay-m.open { display: flex; animation: fadein 0.2s ease; }
+  .bottom-sheet {
+    background: var(--branco);
+    border-radius: 28px 28px 0 0;
+    padding: 12px 24px 36px;
+    width: 100%;
+    text-align: center;
+    animation: slideup 0.25s ease;
+  }
+  @keyframes slideup { from { transform: translateY(100%); } to { transform: translateY(0); } }
+  .sheet-handle {
+    width: 40px; height: 4px;
+    background: var(--cinza-borda);
+    border-radius: 99px;
+    margin: 0 auto 20px;
+  }
+  .sheet-icon { font-size: 48px; margin-bottom: 14px; }
+  .bottom-sheet h2 { font-family: 'Lora', serif; font-size: 22px; font-weight: 600; margin-bottom: 10px; }
+  .bottom-sheet p { font-size: 15px; color: var(--texto-suave); margin-bottom: 24px; line-height: 1.6; }
+  .sheet-actions { display: flex; flex-direction: column; gap: 10px; }
+  .btn-sheet-confirm {
+    background: var(--verde); color: white; border: none;
+    border-radius: 14px; padding: 16px;
+    font-family: 'Nunito', sans-serif; font-size: 17px; font-weight: 900;
+    cursor: pointer; width: 100%; transition: all 0.15s;
+  }
+  .btn-sheet-confirm:active { transform: scale(0.97); }
+  .btn-sheet-secondary {
+    background: var(--cinza-fundo); color: var(--texto-suave);
+    border: 2px solid var(--cinza-borda); border-radius: 14px;
+    padding: 14px; font-family: 'Nunito', sans-serif;
+    font-size: 16px; font-weight: 700; cursor: pointer; width: 100%;
+  }
+
+  /* tutor: form nova sessão */
+  .form-row { margin-bottom: 16px; text-align: left; }
+  .form-row label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; color: var(--texto); }
+  .form-row input, .form-row select {
+    width: 100%; border: 2px solid var(--cinza-borda);
+    border-radius: 12px; padding: 12px 14px;
+    font-family: 'Nunito', sans-serif; font-size: 15px; color: var(--texto);
+    background: var(--cinza-fundo);
+  }
+  .form-row input:focus { outline: none; border-color: var(--verde); background: var(--branco); }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  /* tutor page view */
+  #view-senior-m { display: block; }
+  #view-tutor-m { display: none; }
+
+  .tutor-session-row {
+    background: var(--branco); border-radius: var(--radius);
+    padding: 16px; margin-bottom: 10px; box-shadow: var(--sombra);
+    display: flex; align-items: center; gap: 12px;
+  }
+  .t-date {
+    background: var(--verde-claro); border-radius: 10px;
+    padding: 8px 10px; text-align: center; min-width: 50px;
+    font-size: 11px; font-weight: 800; color: var(--verde);
+    line-height: 1.3;
+  }
+  .t-info { flex: 1; }
+  .t-info h4 { font-size: 14px; font-weight: 900; margin-bottom: 2px; }
+  .t-info p { font-size: 12px; color: var(--texto-suave); font-weight: 600; }
+  .btn-edit {
+    background: var(--cinza-fundo); border: 1.5px solid var(--cinza-borda);
+    border-radius: 8px; padding: 6px 12px; font-size: 12px; font-weight: 700;
+    color: var(--texto-suave); cursor: pointer; font-family: 'Nunito', sans-serif;
+  }
+  .add-btn {
+    width: 100%; background: var(--verde-claro);
+    border: 2px dashed var(--verde-medio); border-radius: var(--radius);
+    padding: 16px; font-family: 'Nunito', sans-serif;
+    font-size: 15px; font-weight: 800; color: var(--verde);
+    cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;
+    margin-top: 4px;
+  }
+  .add-btn:active { background: var(--verde); color: white; }
+
+  /* section label */
+  .sec-label {
+    font-size: 12px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.6px; color: var(--texto-suave);
+    margin-bottom: 10px; padding-left: 2px;
+  }
+</style>
+</head>
+<body>
+
+<div class="phone-shell">
+  <div class="phone-notch"></div>
+
+  <!-- STATUS BAR -->
+  <div class="status-bar">
+    <span class="status-time">10:42</span>
+    <div class="status-icons">
+      <span>●●●</span>
+      <span>WiFi</span>
+      <span>🔋</span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <div class="app-header">
+    <div class="header-logo">Viva<span>Mais</span></div>
+    <div class="header-right">
+      <button class="header-role" onclick="toggleRoleM()">
+        <span id="role-label">Participante ▾</span>
+      </button>
+      <div class="header-avatar">M</div>
+    </div>
+  </div>
+
+  <!-- SCROLL AREA -->
+  <div class="scroll-area" id="scroll-area">
+
+    <!-- ═══ PÁGINA 1: CALENDÁRIO ═══ -->
+    <div class="page active" id="page-calendario-m">
+      <div class="page-title">Calendário</div>
+      <div class="page-subtitle">Toque em um dia para ver as sessões.</div>
+
+      <!-- VIEW SÊNIOR -->
+      <div id="view-senior-m">
+        <div class="tip-banner">💡 Dias com bolinhas têm atividades disponíveis.</div>
+
+        <div class="cal-nav-row">
+          <button class="cal-arrow">‹</button>
+          <div class="cal-month-label">Junho de 2026</div>
+          <button class="cal-arrow">›</button>
+        </div>
+
+        <div class="cal-grid">
+          <div class="cal-hdr">D</div><div class="cal-hdr">S</div>
+          <div class="cal-hdr">T</div><div class="cal-hdr">Q</div>
+          <div class="cal-hdr">Q</div><div class="cal-hdr">S</div>
+          <div class="cal-hdr">S</div>
+
+          <div class="cal-cell empty"></div>
+          <div class="cal-cell"><div class="cell-num">1</div></div>
+          <div class="cal-cell has-event" onclick="selectDayM(this,'2 de junho')">
+            <div class="cell-num">2</div><div class="cell-dot"></div>
+          </div>
+          <div class="cal-cell"><div class="cell-num">3</div></div>
+          <div class="cal-cell has-event" onclick="selectDayM(this,'4 de junho')">
+            <div class="cell-num">4</div><div class="cell-dot verde"></div>
+          </div>
+          <div class="cal-cell"><div class="cell-num">5</div></div>
+          <div class="cal-cell"><div class="cell-num">6</div></div>
+
+          <div class="cal-cell"><div class="cell-num">7</div></div>
+          <div class="cal-cell has-event" onclick="selectDayM(this,'8 de junho')">
+            <div class="cell-num">8</div><div class="cell-dot"></div>
+          </div>
+          <div class="cal-cell"><div class="cell-num">9</div></div>
+          <div class="cal-cell today" onclick="selectDayM(this,'hoje (10 de junho)')">
+            <div class="cell-num">10</div><div class="cell-dot verde"></div>
+          </div>
+          <div class="cal-cell has-event" onclick="selectDayM(this,'11 de junho')">
+            <div class="cell-num">11</div><div class="cell-dot"></div>
+          </div>
+          <div class="cal-cell"><div class="cell-num">12</div></div>
+          <div class="cal-cell"><div class="cell-num">13</div></div>
+
+          <div class="cal-cell"><div class="cell-num">14</div></div>
+          <div class="cal-cell has-event" onclick="selectDayM(this,'15 de junho')">
+            <div class="cell-num">15</div><div class="cell-dot"></div>
+          </div>
+          <div class="cal-cell"><div class="cell-num">16</div></div>
+          <div class="cal-cell has-event" onclick="selectDayM(this,'17 de junho')">
+            <div class="cell-num">17</div><div class="cell-dot verde"></div>
+          </div>
+          <div class="cal-cell"><div class="cell-num">18</div></div>
+          <div class="cal-cell"><div class="cell-num">19</div></div>
+          <div class="cal-cell"><div class="cell-num">20</div></div>
+
+          <div class="cal-cell"><div class="cell-num">21</div></div>
+          <div class="cal-cell has-event" onclick="selectDayM(this,'22 de junho')">
+            <div class="cell-num">22</div><div class="cell-dot"></div>
+          </div>
+          <div class="cal-cell"><div class="cell-num">23</div></div>
+          <div class="cal-cell"><div class="cell-num">24</div></div>
+          <div class="cal-cell has-event" onclick="selectDayM(this,'25 de junho')">
+            <div class="cell-num">25</div><div class="cell-dot verde"></div>
+          </div>
+          <div class="cal-cell"><div class="cell-num">26</div></div>
+          <div class="cal-cell"><div class="cell-num">27</div></div>
+
+          <div class="cal-cell"><div class="cell-num">28</div></div>
+          <div class="cal-cell has-event" onclick="selectDayM(this,'29 de junho')">
+            <div class="cell-num">29</div><div class="cell-dot"></div>
+          </div>
+          <div class="cal-cell"><div class="cell-num">30</div></div>
+          <div class="cal-cell empty"></div><div class="cal-cell empty"></div>
+          <div class="cal-cell empty"></div><div class="cal-cell empty"></div>
+        </div>
+
+        <!-- Sessões do dia (oculto até selecionar) -->
+        <div id="sessions-panel-m" style="display:none">
+          <div class="sessions-title" id="sessions-date-m">Sessões disponíveis</div>
+
+          <div class="session-card-m">
+            <div class="s-time-block">14:00</div>
+            <div class="s-info">
+              <h4>🧘 Yoga para o Bem-Estar</h4>
+              <p>Ana Carvalho · 45 min</p>
+              <div class="s-row">
+                <span class="s-vagas quase">4/10 vagas</span>
+                <button class="btn-inscrever-m" onclick="openSheetM('confirm','Yoga para o Bem-Estar','14:00')">Inscrever-se</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="session-card-m laranja">
+            <div class="s-time-block">16:30</div>
+            <div class="s-info">
+              <h4>🧠 Exercícios de Memória</h4>
+              <p>Carlos Mendes · 60 min</p>
+              <div class="s-row">
+                <span class="s-vagas">2/8 vagas</span>
+                <button class="btn-inscrever-m" onclick="openSheetM('confirm','Exercícios de Memória','16:30')">Inscrever-se</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="session-card-m cinza">
+            <div class="s-time-block">18:00</div>
+            <div class="s-info">
+              <h4>☕ Roda de Conversa</h4>
+              <p>Lúcia Ferreira · 30 min</p>
+              <div class="s-row">
+                <span class="s-vagas lotado">10/10 · Lotado</span>
+                <button class="btn-inscrever-m" disabled>Lotado</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VIEW TUTOR -->
+      <div id="view-tutor-m">
+        <div class="tip-banner" style="background:var(--laranja-claro); border:none; color:var(--laranja)">🎓 Modo Tutor — gerencie suas sessões abaixo.</div>
+        <div class="sec-label">Sessões de Junho</div>
+        <div class="tutor-session-row">
+          <div class="t-date">10<br>Jun</div>
+          <div class="t-info"><h4>☕ Roda de Conversa</h4><p>18:00 · 30 min · 10/10</p></div>
+          <button class="btn-edit">Editar</button>
+        </div>
+        <div class="tutor-session-row">
+          <div class="t-date">15<br>Jun</div>
+          <div class="t-info"><h4>🧘 Yoga para o Bem-Estar</h4><p>14:00 · 45 min · 4/10</p></div>
+          <button class="btn-edit">Editar</button>
+        </div>
+        <div class="tutor-session-row">
+          <div class="t-date">17<br>Jun</div>
+          <div class="t-info"><h4>🧠 Exercícios de Memória</h4><p>16:30 · 60 min · 2/8</p></div>
+          <button class="btn-edit">Editar</button>
+        </div>
+        <button class="add-btn" onclick="openSheetM('nova',null,null)">＋ Nova sessão</button>
+      </div>
+    </div>
+
+    <!-- ═══ PÁGINA 2: MURAL ═══ -->
+    <div class="page" id="page-mural-m">
+      <div class="page-title">Minhas Atividades</div>
+      <div class="page-subtitle">Tudo que você se inscreveu.</div>
+
+      <!-- Card: Hoje -->
+      <div class="mural-card-m hoje-c">
+        <div class="card-stripe-m"></div>
+        <div class="card-body-m">
+          <span class="m-badge badge-h">🌟 Hoje</span>
+          <h3>☕ Roda de Conversa</h3>
+          <div class="info-chips">
+            <div class="chip dest">
+              <span class="lbl">Data</span>
+              <span class="val">10 Jun</span>
+              <span class="sub">Quarta-feira</span>
+            </div>
+            <div class="chip dest">
+              <span class="lbl">Horário</span>
+              <span class="val">18:00</span>
+              <span class="sub">30 min</span>
+            </div>
+            <div class="chip full">
+              <span class="lbl">Participantes</span>
+              <span class="val">10 <span style="font-size:13px;font-weight:600;color:var(--texto-suave)">/ 10</span></span>
+              <div class="vagas-bar-m"><div class="vagas-fill-m lotado" style="width:100%"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="card-tutor-m"><div class="tutor-av-m">👩‍🏫</div>Lúcia Ferreira</div>
+        <div class="card-actions-m">
+          <button class="btn-cancel-m" onclick="openSheetM('cancelar','Roda de Conversa',null)">✕ Cancelar</button>
+          <button class="btn-enter-m" onclick="showPageM('aovivo-m')">▶ Entrar agora</button>
+        </div>
+      </div>
+
+      <!-- Card: Próxima -->
+      <div class="mural-card-m proxima-c">
+        <div class="card-stripe-m"></div>
+        <div class="card-body-m">
+          <span class="m-badge badge-p">📌 Próxima</span>
+          <h3>🧘 Yoga para o Bem-Estar</h3>
+          <div class="info-chips">
+            <div class="chip">
+              <span class="lbl">Data</span>
+              <span class="val">15 Jun</span>
+              <span class="sub">Segunda-feira</span>
+            </div>
+            <div class="chip">
+              <span class="lbl">Horário</span>
+              <span class="val">14:00</span>
+              <span class="sub">45 min</span>
+            </div>
+            <div class="chip full">
+              <span class="lbl">Participantes</span>
+              <span class="val">4 <span style="font-size:13px;font-weight:600;color:var(--texto-suave)">/ 10</span></span>
+              <div class="vagas-bar-m"><div class="vagas-fill-m quase" style="width:40%"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="card-tutor-m"><div class="tutor-av-m">👩‍🏫</div>Ana Carvalho</div>
+        <div class="card-actions-m">
+          <button class="btn-only-cancel-m" onclick="openSheetM('cancelar','Yoga para o Bem-Estar',null)">✕ Cancelar inscrição</button>
+        </div>
+      </div>
+
+      <!-- Card: Agendada -->
+      <div class="mural-card-m">
+        <div class="card-stripe-m"></div>
+        <div class="card-body-m">
+          <span class="m-badge badge-a">✅ Agendada</span>
+          <h3>🧠 Exercícios de Memória</h3>
+          <div class="info-chips">
+            <div class="chip">
+              <span class="lbl">Data</span>
+              <span class="val">17 Jun</span>
+              <span class="sub">Quarta-feira</span>
+            </div>
+            <div class="chip">
+              <span class="lbl">Horário</span>
+              <span class="val">16:30</span>
+              <span class="sub">60 min</span>
+            </div>
+            <div class="chip full">
+              <span class="lbl">Participantes</span>
+              <span class="val">2 <span style="font-size:13px;font-weight:600;color:var(--texto-suave)">/ 8</span></span>
+              <div class="vagas-bar-m"><div class="vagas-fill-m" style="width:25%"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="card-tutor-m"><div class="tutor-av-m">👨‍🏫</div>Carlos Mendes</div>
+        <div class="card-actions-m">
+          <button class="btn-only-cancel-m" onclick="openSheetM('cancelar','Exercícios de Memória',null)">✕ Cancelar inscrição</button>
+        </div>
+      </div>
+
+      <!-- Card: Agendada 2 -->
+      <div class="mural-card-m">
+        <div class="card-stripe-m"></div>
+        <div class="card-body-m">
+          <span class="m-badge badge-a">✅ Agendada</span>
+          <h3>🧘 Yoga para o Bem-Estar</h3>
+          <div class="info-chips">
+            <div class="chip">
+              <span class="lbl">Data</span>
+              <span class="val">22 Jun</span>
+              <span class="sub">Segunda-feira</span>
+            </div>
+            <div class="chip">
+              <span class="lbl">Horário</span>
+              <span class="val">14:00</span>
+              <span class="sub">45 min</span>
+            </div>
+            <div class="chip full">
+              <span class="lbl">Participantes</span>
+              <span class="val">6 <span style="font-size:13px;font-weight:600;color:var(--texto-suave)">/ 10</span></span>
+              <div class="vagas-bar-m"><div class="vagas-fill-m quase" style="width:60%"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="card-tutor-m"><div class="tutor-av-m">👩‍🏫</div>Ana Carvalho</div>
+        <div class="card-actions-m">
+          <button class="btn-only-cancel-m" onclick="openSheetM('cancelar','Yoga para o Bem-Estar',null)">✕ Cancelar inscrição</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PÁGINA 3: AO VIVO ═══ -->
+    <div class="page" id="page-aovivo-m">
+      <div class="page-title">Ao Vivo</div>
+      <div class="page-subtitle">Entre agora ou veja a próxima sessão.</div>
+
+      <div id="live-on-m">
+        <div class="live-card">
+          <div class="live-pill"><div class="live-dot-m"></div> Ao vivo agora</div>
+          <h2>☕ Roda de Conversa</h2>
+          <p>Tutora Lúcia Ferreira · Iniciou às 18:00 · 9 participantes online</p>
+          <button class="btn-live-enter">▶ Entrar na reunião</button>
+        </div>
+      </div>
+
+      <div id="live-off-m" style="display:none">
+        <div class="offline-card">
+          <div class="icon">🌙</div>
+          <h2>Nenhuma sessão agora</h2>
+          <p>Veja abaixo quando será sua próxima sessão.</p>
+        </div>
+      </div>
+
+      <button class="sim-btn" onclick="toggleLiveM()">🔄 Simular: ao vivo / offline</button>
+
+      <div class="proximas-title">Suas próximas sessões</div>
+
+      <div class="proxima-row-m">
+        <div class="date-blk"><div class="mes">Jun</div><div class="dia">15</div></div>
+        <div class="proxima-info"><h4>🧘 Yoga para o Bem-Estar</h4><p>14:00 · Ana Carvalho · 45 min</p></div>
+        <div class="countdown-m">em 5 dias</div>
+      </div>
+      <div class="proxima-row-m">
+        <div class="date-blk"><div class="mes">Jun</div><div class="dia">17</div></div>
+        <div class="proxima-info"><h4>🧠 Exercícios de Memória</h4><p>16:30 · Carlos Mendes · 60 min</p></div>
+        <div class="countdown-m">em 7 dias</div>
+      </div>
+      <div class="proxima-row-m">
+        <div class="date-blk"><div class="mes">Jun</div><div class="dia">22</div></div>
+        <div class="proxima-info"><h4>🧘 Yoga para o Bem-Estar</h4><p>14:00 · Ana Carvalho · 45 min</p></div>
+        <div class="countdown-m">em 12 dias</div>
+      </div>
+    </div>
+
+  </div><!-- /scroll-area -->
+
+  <!-- BOTTOM TABS -->
+  <div class="bottom-tabs">
+    <button class="tab-btn active" id="tab-calendario" onclick="showPageM('calendario-m', 'tab-calendario')">
+      <span class="tab-icon">📅</span>
+      <span class="tab-label">Calendário</span>
+    </button>
+    <button class="tab-btn" id="tab-mural" onclick="showPageM('mural-m', 'tab-mural')">
+      <span class="tab-icon">📋</span>
+      <span class="tab-label">Atividades</span>
+    </button>
+    <button class="tab-btn" id="tab-aovivo" onclick="showPageM('aovivo-m', 'tab-aovivo')">
+      <span class="tab-icon">🔴</span>
+      <span class="tab-label">Ao Vivo</span>
+    </button>
+  </div>
+
+  <!-- ═══ BOTTOM SHEETS ═══ -->
+
+  <!-- Sheet: Confirmar inscrição -->
+  <div class="modal-overlay-m" id="sheet-confirm">
+    <div class="bottom-sheet">
+      <div class="sheet-handle"></div>
+      <div class="sheet-icon">📋</div>
+      <h2>Confirmar inscrição?</h2>
+      <p id="sheet-confirm-text">Você está se inscrevendo em <strong>Yoga para o Bem-Estar</strong> às <strong>14:00</strong>.<br>Você receberá um lembrete antes de começar.</p>
+      <div class="sheet-actions">
+        <button class="btn-sheet-confirm" onclick="openSheetM('success',null,null)">Confirmar</button>
+        <button class="btn-sheet-secondary" onclick="closeSheetM('sheet-confirm')">Voltar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sheet: Sucesso -->
+  <div class="modal-overlay-m" id="sheet-success">
+    <div class="bottom-sheet">
+      <div class="sheet-handle"></div>
+      <div class="sheet-icon" style="animation:bounce 0.5s ease">🎉</div>
+      <h2>Inscrição confirmada!</h2>
+      <p>Ótimo, <strong>Maria</strong>! Adicionamos à sua lista e você receberá um lembrete no dia.</p>
+      <div class="sheet-actions">
+        <button class="btn-sheet-confirm" onclick="closeSheetM('sheet-success')">Perfeito, obrigada!</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sheet: Cancelar -->
+  <div class="modal-overlay-m" id="sheet-cancelar">
+    <div class="bottom-sheet">
+      <div class="sheet-handle"></div>
+      <div class="sheet-icon">⚠️</div>
+      <h2>Cancelar inscrição?</h2>
+      <p id="sheet-cancel-text">Tem certeza que deseja cancelar em <strong>Roda de Conversa</strong>? Você poderá se inscrever novamente se houver vagas.</p>
+      <div class="sheet-actions">
+        <button class="btn-sheet-confirm" style="background:#e74c3c" onclick="openSheetM('cancel-success',null,null)">Sim, cancelar</button>
+        <button class="btn-sheet-secondary" onclick="closeSheetM('sheet-cancelar')">Não, manter</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sheet: Cancelamento confirmado -->
+  <div class="modal-overlay-m" id="sheet-cancel-success">
+    <div class="bottom-sheet">
+      <div class="sheet-handle"></div>
+      <div class="sheet-icon">✅</div>
+      <h2>Inscrição cancelada</h2>
+      <p>Sua inscrição foi cancelada. Esperamos te ver em outra sessão em breve!</p>
+      <div class="sheet-actions">
+        <button class="btn-sheet-confirm" onclick="closeSheetM('sheet-cancel-success')">Ok, entendido</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sheet: Nova sessão (tutor) -->
+  <div class="modal-overlay-m" id="sheet-nova">
+    <div class="bottom-sheet" style="text-align:left; padding-bottom:28px">
+      <div class="sheet-handle"></div>
+      <h2 style="margin-bottom:18px; font-family:'Lora',serif; text-align:center">➕ Nova sessão</h2>
+      <div class="form-row"><label>Nome da atividade</label><input type="text" placeholder="Ex: Yoga para o Bem-Estar"></div>
+      <div class="form-row"><label>Data</label><input type="date"></div>
+      <div class="two-col">
+        <div class="form-row"><label>Horário</label><input type="time"></div>
+        <div class="form-row"><label>Duração (min)</label><input type="number" placeholder="45"></div>
+      </div>
+      <div class="form-row"><label>Limite de participantes</label><input type="number" placeholder="10"></div>
+      <div class="sheet-actions" style="margin-top:8px">
+        <button class="btn-sheet-confirm" onclick="closeSheetM('sheet-nova')">Criar sessão</button>
+        <button class="btn-sheet-secondary" onclick="closeSheetM('sheet-nova')">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /phone-shell -->
+
+<script>
+  // ── Navegação ──
+  function showPageM(pageId, tabId) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + pageId).classList.add('active');
+    document.getElementById('scroll-area').scrollTop = 0;
+    if (tabId) {
+      document.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+    }
+  }
+
+  // ── Toggle tutor/sênior ──
+  let istutor = false;
+  function toggleRoleM() {
+    istutor = !istutor;
+    document.getElementById('role-label').textContent = istutor ? 'Tutor ▾' : 'Participante ▾';
+    document.getElementById('view-senior-m').style.display = istutor ? 'none' : 'block';
+    document.getElementById('view-tutor-m').style.display = istutor ? 'block' : 'none';
+  }
+
+  // ── Selecionar dia ──
+  function selectDayM(el, dateStr) {
+    document.querySelectorAll('.cal-cell').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+    const panel = document.getElementById('sessions-panel-m');
+    const title = document.getElementById('sessions-date-m');
+    panel.style.display = 'block';
+    title.textContent = 'Sessões — ' + dateStr;
+    panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // ── Bottom sheets ──
+  const sheetMap = {
+    'confirm': 'sheet-confirm',
+    'success': 'sheet-success',
+    'cancelar': 'sheet-cancelar',
+    'cancel-success': 'sheet-cancel-success',
+    'nova': 'sheet-nova',
+  };
+  function openSheetM(type, nome, hora) {
+    // close all first
+    Object.values(sheetMap).forEach(id => document.getElementById(id).classList.remove('open'));
+    if (type === 'confirm' && nome && hora) {
+      document.getElementById('sheet-confirm-text').innerHTML =
+        `Você está se inscrevendo em <strong>${nome}</strong> às <strong>${hora}</strong>.<br>Você receberá um lembrete antes de começar.`;
+    }
+    if (type === 'success') {
+      closeSheetM('sheet-confirm');
+    }
+    if (type === 'cancelar' && nome) {
+      document.getElementById('sheet-cancel-text').innerHTML =
+        `Tem certeza que deseja cancelar em <strong>${nome}</strong>? Você poderá se inscrever novamente se houver vagas.`;
+    }
+    if (type === 'cancel-success') {
+      closeSheetM('sheet-cancelar');
+    }
+    const sheetId = sheetMap[type];
+    if (sheetId) document.getElementById(sheetId).classList.add('open');
+  }
+  function closeSheetM(id) {
+    document.getElementById(id).classList.remove('open');
+  }
+  document.querySelectorAll('.modal-overlay-m').forEach(overlay => {
+    overlay.addEventListener('click', e => {
+      if (e.target === overlay) overlay.classList.remove('open');
+    });
+  });
+
+  // ── Toggle ao vivo ──
+  let isLiveM = true;
+  function toggleLiveM() {
+    isLiveM = !isLiveM;
+    document.getElementById('live-on-m').style.display = isLiveM ? 'block' : 'none';
+    document.getElementById('live-off-m').style.display = isLiveM ? 'none' : 'block';
+  }
+</script>
+</body>
+</html>
