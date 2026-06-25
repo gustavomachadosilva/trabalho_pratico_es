@@ -1,22 +1,32 @@
-\contentsline {section}{\numberline {1}INTRODUÇÃO}{3}{section.1}%
-\contentsline {section}{\numberline {2}DESK RESEARCH}{4}{section.2}%
-\contentsline {section}{\numberline {3}BENCHMARK}{5}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Projeto Rede Bem Estar (App Madu - Instituto Tellus)}{5}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Memoryboard}{6}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Oscar Senior}{7}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Connect Care App}{7}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Silver Surf Web Browser}{8}{subsection.3.5}%
-\contentsline {section}{\numberline {4}REQUISITOS}{9}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Requisitos Funcionais}{9}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Requisitos Não Funcionais}{11}{subsection.4.2}%
-\contentsline {section}{\numberline {5}CASOS DE USO E DIAGRAMAS}{13}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Diagrama geral de casos de uso}{13}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Assistir à aula gravada}{13}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Disponibilizar uma aula gravada}{15}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Participar de encontro ao vivo}{16}{subsection.5.4}%
-\contentsline {section}{\numberline {6}DIAGRAMAS DO PROJETO}{18}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Diagrama de Classes}{18}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Diagrama de Sequência}{19}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Diagrama de Atividades}{19}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}Diagrama de Pacotes}{20}{subsection.6.4}%
-\contentsline {section}{\numberline {7}ARQUITETURA}{22}{section.7}%
+\contentsline {section}{\numberline {1}INTRODUÇÃO}{4}{section.1}%
+\contentsline {section}{\numberline {2}DESK RESEARCH}{5}{section.2}%
+\contentsline {section}{\numberline {3}BENCHMARK}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Projeto Rede Bem Estar (App Madu - Instituto Tellus)}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Memoryboard}{7}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Oscar Senior}{8}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Connect Care App}{8}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Silver Surf Web Browser}{9}{subsection.3.5}%
+\contentsline {section}{\numberline {4}REQUISITOS}{10}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Requisitos Funcionais}{10}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Requisitos Não Funcionais}{12}{subsection.4.2}%
+\contentsline {section}{\numberline {5}CASOS DE USO E DIAGRAMAS}{14}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Diagrama geral de casos de uso}{14}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Assistir à aula gravada}{14}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Disponibilizar uma aula gravada}{16}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Participar de encontro ao vivo}{17}{subsection.5.4}%
+\contentsline {section}{\numberline {6}DIAGRAMAS DO PROJETO}{19}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Diagrama de Classes}{19}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Diagrama de Sequência}{20}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Diagrama de Atividades}{20}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Diagrama de Pacotes}{21}{subsection.6.4}%
+\contentsline {section}{\numberline {7}ARQUITETURA}{23}{section.7}%
+\contentsline {section}{\numberline {8}MVP}{24}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Requisitos Priorizados}{24}{subsection.8.1}%
+\contentsline {section}{\numberline {9}PERSONAS}{25}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Criação das personas}{25}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Persona Sênior}{25}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Persona Turora}{25}{subsection.9.3}%
+\contentsline {section}{\numberline {10}JORNADAS DE USUÁRIO}{27}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Jornada 1 - Maria (Sênior): Inscrição em aula ao vivo}{27}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Jornada 2 - Maria (Sênior): Participação de aula ao vivo}{28}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Jornada 3 - Maria (Sênior): Disponibilização de aula ao vivo}{28}{subsection.10.3}%
