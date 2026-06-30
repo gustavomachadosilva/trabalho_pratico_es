@@ -1,15 +1,15 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
-[0] Config.pm:331> INFO - Logfile is '/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/main.blg'
-[23] biber-darwin:342> INFO - === Sat May 23, 2026, 19:52:34
-[30] Biber.pm:421> INFO - Reading '/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/main.bcf'
-[58] Biber.pm:999> INFO - Using all citekeys in bib section 0
-[63] Biber.pm:4487> INFO - Processing section 0
-[66] Biber.pm:4678> INFO - Looking for bibtex file 'referencias.bib' for section 0
-[68] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[68] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[68] Biber.pm:4307> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[68] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
-[69] bbl.pm:676> INFO - Writing '/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/main.bbl' with encoding 'UTF-8'
-[69] bbl.pm:779> INFO - Output to /Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/main.bbl
-[69] Biber.pm:132> WARN - Data source 'referencias.bib' is empty, ignoring
-[69] Biber.pm:134> INFO - WARNINGS: 1
+[0] Config.pm:331> INFO - Logfile is 'main.blg'
+[37] biber-darwin:342> INFO - === Tue Jun 23, 2026, 10:55:43
+[44] Biber.pm:421> INFO - Reading 'main.bcf'
+[90] Biber.pm:999> INFO - Using all citekeys in bib section 0
+[97] Biber.pm:4487> INFO - Processing section 0
+[102] Biber.pm:4678> INFO - Looking for bibtex file 'referencias.bib' for section 0
+[105] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[105] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[105] Biber.pm:4307> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[105] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
+[105] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[105] bbl.pm:779> INFO - Output to main.bbl
+[105] Biber.pm:132> WARN - Data source 'referencias.bib' is empty, ignoring
+[105] Biber.pm:134> INFO - WARNINGS: 1

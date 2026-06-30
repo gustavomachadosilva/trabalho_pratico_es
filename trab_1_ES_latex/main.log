@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.23)  25 MAY 2026 20:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.24)  25 JUN 2026 18:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/main.tex"
-(/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/main.tex
+**/Users/yasminsimao/Desktop/Semestre_26_1/Eng_SW/Trabalho/trab_1_ES_latex/main.tex
+(/Users/yasminsimao/Desktop/Semestre_26_1/Eng_SW/Trabalho/trab_1_ES_latex/main.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (/usr/local/texlive/2026/texmf-dist/tex/latex/base/article.cls
@@ -649,7 +649,7 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 )
 \@quotelevel=\count474
 \@quotereset=\count475
- (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/main.aux (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/capa.aux) (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/sections/introducao.aux) (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/sections/desk_research.aux) (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/sections/benchmark.aux) (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/sections/requisitos.aux) (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/sections/diagramas.aux) (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/sections/diagramas2.aux) (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/sections/arquitetura.aux))
+ (./main.aux (./capa.aux) (./sections/introducao.aux) (./sections/desk_research.aux) (./sections/benchmark.aux) (./sections/requisitos.aux) (./sections/diagramas.aux) (./sections/diagramas2.aux) (./sections/arquitetura.aux) (./sections/mvp.aux) (./sections/Personas.aux) (./sections/Jornadas.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
@@ -724,7 +724,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring OFF on input line 50.
-(/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/main.out) (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/main.out)
+(./main.out) (./main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
@@ -765,32 +765,29 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
- (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/main.bbl)
+ (./main.bbl)
 Package biblatex Info: Reference section=0 on input line 50.
 Package biblatex Info: Reference segment=0 on input line 50.
 \openout2 = `capa.aux'.
 
- (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/capa.tex) [1
+ (./capa.tex) [1
 
 
-{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/main.toc
+{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./main.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 4.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 4.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 4.
-)
-\tf@toc=\write6
-\openout6 = `main.toc'.
-
  [2
 
 
-]
-\openout2 = `sections/introducao.aux'.
+])
+\tf@toc=\write6
+\openout6 = `main.toc'.
 
- (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/sections/introducao.tex)
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -798,12 +795,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[3
+[3]
+\openout2 = `sections/introducao.aux'.
 
-]
-\openout2 = `sections/desk_research.aux'.
-
- (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/sections/desk_research.tex)
+ (./sections/introducao.tex)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -813,16 +808,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [4
 
-
-
 ]
-\openout2 = `sections/benchmark.aux'.
+\openout2 = `sections/desk_research.aux'.
 
- (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/sections/benchmark.tex
-Overfull \hbox (3.81497pt too wide) in paragraph at lines 21--22
-[]\OT1/cmr/m/n/12 Cadastro de usu^^Sarios: Per-mite cria^^Xc~ao de per-fil para per-son-al-iza^^Xc~ao de conte^^Sudo. 
- []
-
+ (./sections/desk_research.tex)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -834,6 +823,25 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 
 
+]
+\openout2 = `sections/benchmark.aux'.
+
+ (./sections/benchmark.tex
+Overfull \hbox (3.81497pt too wide) in paragraph at lines 21--22
+[]\OT1/cmr/m/n/12 Cadastro de usu^^Sarios: Per-mite cria^^Xc~ao de per-fil para per-son-al-iza^^Xc~ao de conte^^Sudo. 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[6
+
+
+
 {/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -842,7 +850,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[6]
+[7]
 Overfull \hbox (35.83134pt too wide) in paragraph at lines 94--95
 []\OT1/cmr/m/n/12 Aplicativo fo-cado na conex~ao en-tre o idoso, seus fa-mil-iares e profis-sion-ais de sa^^Sude/cuidadores. 
  []
@@ -854,7 +862,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[7])
+[8])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -862,10 +870,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[8]
+[9]
 \openout2 = `sections/requisitos.aux'.
 
- (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/sections/requisitos.tex
+ (./sections/requisitos.tex
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -873,7 +881,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[9
+[10
 
 
 
@@ -885,7 +893,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[10]
+[11]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -893,7 +901,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[11])
+[12])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -901,16 +909,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[12]
+[13]
 \openout2 = `sections/diagramas.aux'.
 
- (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/sections/diagramas.tex
-<images/diagramaGeral.png, id=219, 1000.73875pt x 599.23875pt>
+ (./sections/diagramas.tex
+<images/diagramaGeral.png, id=227, 1000.73875pt x 599.23875pt>
 File: images/diagramaGeral.png Graphic file (type png)
 <use images/diagramaGeral.png>
 Package pdftex.def Info: images/diagramaGeral.png  used on input line 13.
 (pdftex.def)             Requested size: 364.19667pt x 218.0757pt.
-<images/diagrama1.png, id=221, 434.62375pt x 312.16624pt>
+<images/diagrama1.png, id=229, 434.62375pt x 312.16624pt>
 File: images/diagrama1.png Graphic file (type png)
 <use images/diagrama1.png>
 Package pdftex.def Info: images/diagrama1.png  used on input line 22.
@@ -926,12 +934,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[13
+[14
 
 
 
- </Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/images/diagramaGeral.png>]
-<images/diagrama2.png, id=229, 462.72874pt x 402.50375pt>
+ <./images/diagramaGeral.png>]
+<images/diagrama2.png, id=236, 462.72874pt x 402.50375pt>
 File: images/diagrama2.png Graphic file (type png)
 <use images/diagrama2.png>
 Package pdftex.def Info: images/diagrama2.png  used on input line 68.
@@ -944,7 +952,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[14 </Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/images/diagrama1.png>]
+[15 <./images/diagrama1.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -952,8 +960,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[15 </Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/images/diagrama2.png>]
-<images/diagrama3.png, id=249, 456.70625pt x 421.575pt>
+[16 <./images/diagrama2.png>]
+<images/diagrama3.png, id=256, 456.70625pt x 421.575pt>
 File: images/diagrama3.png Graphic file (type png)
 <use images/diagrama3.png>
 Package pdftex.def Info: images/diagrama3.png  used on input line 113.
@@ -966,7 +974,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[16 </Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/images/diagrama3.png>])
+[17 <./images/diagrama3.png>])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -974,16 +982,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[17]
+[18]
 \openout2 = `sections/diagramas2.aux'.
 
- (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/sections/diagramas2.tex
-<images/classes_senior.png, id=270, 1086.0575pt x 1343.0175pt>
+ (./sections/diagramas2.tex
+<images/classes_senior.png, id=276, 1086.0575pt x 1343.0175pt>
 File: images/classes_senior.png Graphic file (type png)
 <use images/classes_senior.png>
 Package pdftex.def Info: images/classes_senior.png  used on input line 11.
 (pdftex.def)             Requested size: 364.19667pt x 450.36961pt.
-<images/sequencia.png, id=272, 531.9875pt x 442.65375pt>
+<images/sequencia.png, id=278, 531.9875pt x 442.65375pt>
 File: images/sequencia.png Graphic file (type png)
 <use images/sequencia.png>
 Package pdftex.def Info: images/sequencia.png  used on input line 21.
@@ -996,12 +1004,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[18
+[19
 
 
 
- </Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/images/classes_senior.png>]
-<images/atividades.png, id=280, 603.25375pt x 1215.54124pt>
+ <./images/classes_senior.png>]
+<images/atividades.png, id=287, 603.25375pt x 1215.54124pt>
 File: images/atividades.png Graphic file (type png)
 <use images/atividades.png>
 Package pdftex.def Info: images/atividades.png  used on input line 32.
@@ -1014,8 +1022,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[19 </Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/images/sequencia.png>]
-<images/pacotes.png, id=290, 544.0325pt x 594.22pt>
+[20 <./images/sequencia.png>]
+<images/pacotes.png, id=297, 544.0325pt x 594.22pt>
 File: images/pacotes.png Graphic file (type png)
 <use images/pacotes.png>
 Package pdftex.def Info: images/pacotes.png  used on input line 43.
@@ -1028,7 +1036,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[20 </Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/images/atividades.png>]
+[21 <./images/atividades.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1036,10 +1044,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[21 </Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/images/pacotes.png>]
+[22 <./images/pacotes.png>]
 \openout2 = `sections/arquitetura.aux'.
 
- (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/sections/arquitetura.tex)
+ (./sections/arquitetura.tex)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1047,17 +1055,305 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[22
+[23
 
 
 
 ]
+\openout2 = `sections/mvp.aux'.
 
-LaTeX Warning: Empty bibliography on input line 70.
+ (./sections/mvp.tex)
 
-runsystem(latexminted cleantemp  --timestamp 20260525201214 FAD58DE7366495DB4650CFEFAC2FCD61)...executed safely (allowed).
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-(/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/main.aux (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/capa.aux) (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/sections/introducao.aux) (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/sections/desk_research.aux) (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/sections/benchmark.aux) (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/sections/requisitos.aux) (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/sections/diagramas.aux) (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/sections/diagramas2.aux) (/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/sections/arquitetura.aux))
+[24
+
+
+
+]
+\openout2 = `sections/Personas.aux'.
+
+ (./sections/Personas.tex
+<images/personaSenior.png, id=324, 1091.07625pt x 541.02126pt>
+File: images/personaSenior.png Graphic file (type png)
+<use images/personaSenior.png>
+Package pdftex.def Info: images/personaSenior.png  used on input line 9.
+(pdftex.def)             Requested size: 341.43307pt x 169.29987pt.
+<images/personaTutora.png, id=325, 1092.08pt x 602.25pt>
+File: images/personaTutora.png Graphic file (type png)
+<use images/personaTutora.png>
+Package pdftex.def Info: images/personaTutora.png  used on input line 16.
+(pdftex.def)             Requested size: 341.43307pt x 188.28535pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[25
+
+
+
+ <./images/personaSenior.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[26 <./images/personaTutora.png>]
+\openout2 = `sections/Jornadas.aux'.
+
+ (./sections/Jornadas.tex
+Underfull \hbox (badness 5417) in paragraph at lines 15--15
+\OT1/cmr/m/n/12 que uma nova aula de
+ []
+
+
+Underfull \hbox (badness 2334) in paragraph at lines 19--19
+[]|\OT1/cmr/m/n/12 3 - En-con-tra a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+[]|\OT1/cmr/m/n/12 Levemente
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+[]|\OT1/cmr/m/n/12 + Card com data,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+\OT1/cmr/m/n/12 hor^^Sario e va-gas
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+
+ []
+
+
+Underfull \hbox (badness 5231) in paragraph at lines 19--19
+\OT1/cmr/m/n/12 - Pode ter medo de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
+[]|\OT1/cmr/m/n/12 Toca em ``Inscrever-se'',
+ []
+
+
+Underfull \hbox (badness 5431) in paragraph at lines 21--21
+\OT1/cmr/m/n/12 con-firma^^Xc~ao sim-ples com
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
+
+ []
+
+
+Underfull \hbox (badness 1132) in paragraph at lines 23--23
+[]|\OT1/cmr/m/n/12 5 - Con-firma^^Xc~ao
+ []
+
+
+Underfull \hbox (badness 1939) in paragraph at lines 23--23
+\OT1/cmr/m/n/12 salvo na aba de Min-has
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
+\OT1/cmr/m/n/12 re-cebe no-ti-fica^^Xc~oes lem-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
+[]|\OT1/cmr/m/n/12 Segura e
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
+[]|\OT1/cmr/m/n/12 + Lem-bretes au-
+ []
+
+
+Overfull \hbox (46.0961pt too wide) in paragraph at lines 11--27
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--39
+[]|\OT1/cmr/m/n/12 + No-ti-fica^^Xc~ao em
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--39
+\OT1/cmr/m/n/12 lin-guagem sim-ples e
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--39
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--39
+\OT1/cmr/m/n/12 - Pre-cisa en-con-trar
+ []
+
+
+Underfull \hbox (badness 3769) in paragraph at lines 41--41
+[]|\OT1/cmr/m/n/12 Encontra um lu-gar ad-e-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--43
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--43
+\OT1/cmr/m/n/12 - Pode ter prob-le-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--45
+[]|\OT1/cmr/m/n/12 Levemente
+ []
+
+
+Underfull \hbox (badness 2134) in paragraph at lines 45--45
+[]|\OT1/cmr/m/n/12 - Pode ser um pouco
+ []
+
+
+Underfull \hbox (badness 2990) in paragraph at lines 45--45
+\OT1/cmr/m/n/12 dif^^S^^Pcil se lo-calizar nas
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--45
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--45
+\OT1/cmr/m/n/12 + V^^Sarios pon-tos de
+ []
+
+
+Underfull \hbox (badness 2302) in paragraph at lines 49--49
+[]|\OT1/cmr/m/n/12 + Volta para tela de
+ []
+
+
+Overfull \hbox (46.0961pt too wide) in paragraph at lines 35--51
+ [][] 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[27
+
+
+
+]
+Underfull \hbox (badness 8038) in paragraph at lines 65--65
+\OT1/cmr/m/n/12 sess~ao'', preenche nome,
+ []
+
+
+Underfull \hbox (badness 2088) in paragraph at lines 65--65
+\OT1/cmr/m/n/12 data, hor^^Sario, dura^^Xc~ao e
+ []
+
+
+Underfull \hbox (badness 7203) in paragraph at lines 67--67
+[]|\OT1/cmr/m/n/12 3 - No-ti-fica^^Xc~ao
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
+[]|\OT1/cmr/m/n/12 + No-ti-fica^^Xc~ao au-
+ []
+
+
+Underfull \hbox (badness 4569) in paragraph at lines 67--67
+\OT1/cmr/m/n/12 tom^^Satica, elim-ina tra-
+ []
+
+
+Underfull \hbox (badness 1152) in paragraph at lines 71--71
+[]|\OT1/cmr/m/n/12 Atenta, lev-e-
+ []
+
+
+Underfull \hbox (badness 3312) in paragraph at lines 73--73
+\OT1/cmr/m/n/12 lat^^Sorio au-tom^^Satico: pre-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
+\OT1/cmr/m/n/12 + Vis~ao por ativi-
+ []
+
+
+Overfull \hbox (46.0961pt too wide) in paragraph at lines 59--75
+ [][] 
+ []
+
+)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[28]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[29]
+
+LaTeX Warning: Empty bibliography on input line 73.
+
+runsystem(latexminted cleantemp  --timestamp 20260625183755 FAD58DE7366495DB4650CFEFAC2FCD61)...executed safely (allowed).
+
+(./main.aux (./capa.aux) (./sections/introducao.aux) (./sections/desk_research.aux) (./sections/benchmark.aux) (./sections/requisitos.aux) (./sections/diagramas.aux) (./sections/diagramas2.aux) (./sections/arquitetura.aux) (./sections/mvp.aux) (./sections/Personas.aux) (./sections/Jornadas.aux))
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
@@ -1067,7 +1363,7 @@ L3 programming layer <2020/03/25>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A7EDABD1C21132A6901722245AA82C92;3591.
+(rerunfilecheck)             Checksum: E66C0D5B0D5CA5E6668526FC1151D2BA;5640.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                main
@@ -1078,18 +1374,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 25950 strings out of 467525
- 512010 string characters out of 5418982
- 1511231 words of memory out of 5000000
- 54423 multiletter control sequences out of 15000+600000
+ 26042 strings out of 467525
+ 507862 string characters out of 5418982
+ 1528189 words of memory out of 5000000
+ 54514 multiletter control sequences out of 15000+600000
  632312 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 78i,11n,79p,963b,2366s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 78i,12n,79p,921b,2366s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on "/Users/gustavomachadosilva/Documents/UFRGS/5° Semestre/Engenharia de Software/trabalho_prático/trab_1_ES_latex/main.pdf" (22 pages, 928130 bytes).
+Output written on main.pdf (29 pages, 1803976 bytes).
 PDF statistics:
- 349 PDF objects out of 1000 (max. 8388607)
- 300 compressed objects within 3 object streams
- 118 named destinations out of 1000 (max. 500000)
- 217 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 394 PDF objects out of 1000 (max. 8388607)
+ 333 compressed objects within 4 object streams
+ 99 named destinations out of 1000 (max. 500000)
+ 307 words of extra memory for PDF output out of 10000 (max. 10000000)
 
