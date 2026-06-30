@@ -1,0 +1,64 @@
+[ {
+  "id" : 1,
+  "name" : "Yoga para Iniciantes",
+  "date" : "2026-07-01",
+  "time" : "10:00",
+  "numParticipants" : 15,
+  "participants" : [ ]
+}, {
+  "id" : 2,
+  "name" : "Pilates Avançado",
+  "date" : "2026-07-02",
+  "time" : "11:00",
+  "numParticipants" : 8,
+  "participants" : [ ]
+}, {
+  "id" : 3,
+  "name" : "Yoga para Iniciantes",
+  "date" : "2026-07-01",
+  "time" : "10:00",
+  "numParticipants" : 15,
+  "participants" : [ ]
+}, {
+  "id" : 4,
+  "name" : "Pilates Avançado",
+  "date" : "2026-07-02",
+  "time" : "11:00",
+  "numParticipants" : 8,
+  "participants" : [ ]
+}, {
+  "id" : 5,
+  "name" : "Yoga para Iniciantes",
+  "date" : "2026-07-01",
+  "time" : "10:00",
+  "numParticipants" : 15,
+  "participants" : [ ]
+}, {
+  "id" : 6,
+  "name" : "Pilates Avançado",
+  "date" : "2026-07-02",
+  "time" : "11:00",
+  "numParticipants" : 8,
+  "participants" : [ ]
+}, {
+  "id" : 7,
+  "name" : "Yoga para Iniciantes",
+  "date" : "2026-07-01",
+  "time" : "10:00",
+  "numParticipants" : 15,
+  "participants" : [ ]
+}, {
+  "id" : 8,
+  "name" : "Pilates Avançado",
+  "date" : "2026-07-02",
+  "time" : "11:00",
+  "numParticipants" : 8,
+  "participants" : [ ]
+}, {
+  "id" : 9,
+  "name" : "teste",
+  "date" : "2026-06-10",
+  "time" : "14:00",
+  "numParticipants" : 10,
+  "participants" : [ ]
+} ]

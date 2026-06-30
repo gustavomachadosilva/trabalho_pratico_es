@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VivaMais – Entrar</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --verde: #2d7a4f;
+    --verde-claro: #e8f5ee;
+    --verde-medio: #4aab72;
+    --laranja: #e8803a;
+    --laranja-claro: #fff3eb;
+    --amarelo: #f5c842;
+    --cinza-fundo: #f7f6f2;
+    --cinza-borda: #e0ddd5;
+    --texto: #2a2520;
+    --texto-suave: #6b6560;
+    --branco: #ffffff;
+    --sombra: 0 4px 20px rgba(0,0,0,0.08);
+    --sombra-forte: 0 8px 32px rgba(0,0,0,0.14);
+    --radius: 20px;
+    --radius-lg: 28px;
+    --erro: #c0392b;
+    --erro-claro: #fdf0ee;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--cinza-fundo);
+    color: var(--texto);
+    font-size: 18px;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--verde);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    height: 72px;
+    box-shadow: 0 2px 16px rgba(45,122,79,0.3);
+  }
+  .nav-logo {
+    font-family: 'Lora', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--branco);
+    letter-spacing: -0.3px;
+  }
+  .nav-logo span { color: var(--amarelo); }
+
+  /* ── MAIN LAYOUT ── */
+  main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 24px;
+  }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--branco);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--sombra-forte);
+    padding: 48px 52px;
+    width: 100%;
+    max-width: 480px;
+  }
+
+  /* ── TAB TOGGLE (Login / Cadastro) ── */
+  .tab-toggle {
+    display: flex;
+    background: var(--cinza-fundo);
+    border: 2px solid var(--cinza-borda);
+    border-radius: 50px;
+    padding: 4px;
+    margin-bottom: 36px;
+  }
+  .tab-btn {
+    flex: 1;
+    padding: 12px 0;
+    border-radius: 50px;
+    border: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    background: transparent;
+    color: var(--texto-suave);
+    transition: all 0.2s;
+  }
+  .tab-btn.active {
+    background: var(--verde);
+    color: var(--branco);
+    box-shadow: 0 2px 10px rgba(45,122,79,0.3);
+  }
+  .tab-btn:hover:not(.active) {
+    color: var(--texto);
+    background: var(--cinza-borda);
+  }
+
+  /* ── TÍTULOS ── */
+  .card-title {
+    font-family: 'Lora', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--texto);
+    margin-bottom: 6px;
+  }
+  .card-subtitle {
+    font-size: 16px;
+    color: var(--texto-suave);
+    margin-bottom: 32px;
+  }
+
+  /* ── FORMULÁRIO ── */
+  .form-panel { display: none; animation: fadein 0.25s ease; }
+  .form-panel.active { display: block; }
+  @keyframes fadein { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+  .form-group label {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--texto);
+    margin-bottom: 8px;
+  }
+  .form-group input {
+    width: 100%;
+    border: 2px solid var(--cinza-borda);
+    border-radius: 14px;
+    padding: 14px 18px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 17px;
+    color: var(--texto);
+    background: var(--cinza-fundo);
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .form-group input::placeholder { color: #b0aca6; }
+  .form-group input:focus {
+    border-color: var(--verde);
+    background: var(--branco);
+  }
+  .form-group input.erro {
+    border-color: var(--erro);
+    background: var(--erro-claro);
+  }
+  .msg-erro {
+    display: none;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--erro);
+    margin-top: 6px;
+    padding-left: 4px;
+  }
+  .msg-erro.visivel { display: block; }
+
+  /* Força de senha */
+  .senha-forca {
+    display: none;
+    margin-top: 10px;
+    gap: 6px;
+  }
+  .senha-forca.visivel { display: flex; }
+  .forca-barra {
+    flex: 1;
+    height: 5px;
+    border-radius: 10px;
+    background: var(--cinza-borda);
+    transition: background 0.3s;
+  }
+  .forca-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--texto-suave);
+    margin-top: 6px;
+  }
+
+  /* Esqueci a senha */
+  .link-esqueci {
+    display: block;
+    text-align: right;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--verde);
+    text-decoration: none;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  .link-esqueci:hover { text-decoration: underline; }
+
+  /* ── BOTÃO PRINCIPAL ── */
+  .btn-principal {
+    width: 100%;
+    background: var(--verde);
+    color: var(--branco);
+    border: none;
+    border-radius: 14px;
+    padding: 16px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+    box-shadow: 0 4px 14px rgba(45,122,79,0.35);
+    margin-top: 4px;
+  }
+  .btn-principal:hover {
+    background: #235f3c;
+    box-shadow: 0 6px 20px rgba(45,122,79,0.45);
+  }
+  .btn-principal:active { transform: scale(0.98); }
+
+  /* ── DIVIDER ── */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 24px 0;
+    color: var(--texto-suave);
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1.5px;
+    background: var(--cinza-borda);
+  }
+
+  /* ── ALERTA TOAST ── */
+  .toast {
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: var(--verde);
+    color: var(--branco);
+    padding: 16px 28px;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: 700;
+    box-shadow: var(--sombra-forte);
+    transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+    z-index: 999;
+    white-space: nowrap;
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+  .toast.erro-toast { background: var(--erro); }
+
+  /* ── MODAL ESQUECI A SENHA ── */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: var(--branco);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--sombra-forte);
+    padding: 40px 44px;
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    animation: fadein 0.25s ease;
+  }
+  .modal-icon { font-size: 44px; margin-bottom: 14px; }
+  .modal h2 {
+    font-family: 'Lora', serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .modal p { font-size: 16px; color: var(--texto-suave); margin-bottom: 24px; }
+  .modal-actions { display: flex; gap: 12px; justify-content: center; flex-direction: column; }
+  .btn-secondary {
+    background: var(--cinza-fundo);
+    color: var(--texto);
+    border: 2px solid var(--cinza-borda);
+    border-radius: 14px;
+    padding: 13px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-secondary:hover { background: var(--cinza-borda); }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: var(--texto-suave);
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Viva<span>Mais</span></div>
+</nav>
+
+<main>
+  <div class="card">
+
+    <!-- Toggle Login / Cadastro -->
+    <div class="tab-toggle">
+      <button class="tab-btn active" id="tab-login" onclick="showTab('login')">Entrar</button>
+      <button class="tab-btn" id="tab-cadastro" onclick="showTab('cadastro')">Cadastrar</button>
+    </div>
+
+    <!-- ── PAINEL LOGIN ── -->
+    <div class="form-panel active" id="panel-login">
+      <div class="card-title">Bem-vindo de volta! 👋</div>
+      <div class="card-subtitle">Entre com seu e-mail e senha para continuar.</div>
+
+      <div class="form-group">
+        <label for="login-email">E-mail</label>
+        <input type="email" id="login-email" placeholder="seu@email.com" autocomplete="email">
+        <div class="msg-erro" id="err-login-email">Por favor, informe um e-mail válido.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="login-senha">Senha</label>
+        <input type="password" id="login-senha" placeholder="Sua senha" autocomplete="current-password">
+        <div class="msg-erro" id="err-login-senha">Por favor, informe sua senha.</div>
+      </div>
+
+      <a class="link-esqueci" onclick="openEsqueci()">Esqueci minha senha</a>
+
+      <button class="btn-principal" onclick="fazerLogin()">Entrar</button>
+
+      <div class="divider">ou</div>
+
+      <button class="btn-secondary" style="width:100%; border-radius:14px; padding:14px; font-size:17px;" onclick="showTab('cadastro')">
+        Criar uma conta gratuita
+      </button>
+    </div>
+
+    <!-- ── PAINEL CADASTRO ── -->
+    <div class="form-panel" id="panel-cadastro">
+      <div class="card-title">Criar conta 🌱</div>
+      <div class="card-subtitle">Preencha os dados abaixo para começar.</div>
+
+      <div class="form-group">
+        <label for="cad-nome">Nome completo</label>
+        <input type="text" id="cad-nome" placeholder="Seu nome" autocomplete="name">
+        <div class="msg-erro" id="err-cad-nome">Por favor, informe seu nome.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="cad-email">E-mail</label>
+        <input type="email" id="cad-email" placeholder="seu@email.com" autocomplete="email">
+        <div class="msg-erro" id="err-cad-email">Por favor, informe um e-mail válido.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="cad-senha">Senha</label>
+        <input type="password" id="cad-senha" placeholder="Crie uma senha" autocomplete="new-password" oninput="verificarForca(this.value)">
+        <div class="msg-erro" id="err-cad-senha">A senha deve ter pelo menos 6 caracteres.</div>
+        <div class="senha-forca" id="forca-barras">
+          <div class="forca-barra" id="b1"></div>
+          <div class="forca-barra" id="b2"></div>
+          <div class="forca-barra" id="b3"></div>
+          <div class="forca-barra" id="b4"></div>
+        </div>
+        <div class="forca-label" id="forca-texto"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="cad-confirmar">Confirmar senha</label>
+        <input type="password" id="cad-confirmar" placeholder="Repita a senha" autocomplete="new-password">
+        <div class="msg-erro" id="err-cad-confirmar">As senhas não coincidem.</div>
+      </div>
+
+      <button class="btn-principal" onclick="fazerCadastro()" style="margin-top: 8px;">Criar conta</button>
+
+      <div class="divider">ou</div>
+
+      <button class="btn-secondary" style="width:100%; border-radius:14px; padding:14px; font-size:17px;" onclick="showTab('login')">
+        Já tenho uma conta
+      </button>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  &copy; 2025 VivaMais · Plataforma de inclusão digital para pessoas 65+
+</footer>
+
+<!-- ── MODAL ESQUECI A SENHA ── -->
+<div class="modal-overlay" id="modal-esqueci">
+  <div class="modal">
+    <div class="modal-icon">🔑</div>
+    <h2>Recuperar senha</h2>
+    <p>Informe seu e-mail e enviaremos um link para você criar uma nova senha.</p>
+    <div class="form-group" style="text-align:left">
+      <label for="esqueci-email">E-mail</label>
+      <input type="email" id="esqueci-email" placeholder="seu@email.com">
+      <div class="msg-erro" id="err-esqueci-email">Por favor, informe um e-mail válido.</div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-principal" onclick="enviarRecuperacao()">Enviar link de recuperação</button>
+      <button class="btn-secondary" onclick="closeModal('modal-esqueci')">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── TOAST ── -->
+<div class="toast" id="toast"></div>
+
+<script>
+  // ── Alternar abas ──
+  function showTab(tab) {
+    const panels = { login: 'panel-login', cadastro: 'panel-cadastro' };
+    const tabs   = { login: 'tab-login',   cadastro: 'tab-cadastro'   };
+
+    Object.keys(panels).forEach(k => {
+      document.getElementById(panels[k]).classList.toggle('active', k === tab);
+      document.getElementById(tabs[k]).classList.toggle('active', k === tab);
+    });
+
+    // Limpar erros ao trocar de aba
+    document.querySelectorAll('.msg-erro').forEach(el => el.classList.remove('visivel'));
+    document.querySelectorAll('input').forEach(el => el.classList.remove('erro'));
+  }
+
+  // ── Validação genérica ──
+  function validarCampo(inputId, erroId, condicao) {
+    const input = document.getElementById(inputId);
+    const erro  = document.getElementById(erroId);
+    const ok = condicao(input.value.trim());
+    input.classList.toggle('erro', !ok);
+    erro.classList.toggle('visivel', !ok);
+    return ok;
+  }
+
+  function isEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+
+  // ── Login ──
+  function fazerLogin() {
+    const emailOk = validarCampo('login-email', 'err-login-email', isEmail);
+    const senhaOk = validarCampo('login-senha', 'err-login-senha', v => v.length >= 1);
+    if (!emailOk || !senhaOk) return;
+
+    // Simulação de login bem-sucedido
+    showToast('✅ Entrando na plataforma…');
+  }
+
+  // ── Cadastro ──
+  function fazerCadastro() {
+    const nomeOk     = validarCampo('cad-nome',      'err-cad-nome',      v => v.length >= 2);
+    const emailOk    = validarCampo('cad-email',     'err-cad-email',     isEmail);
+    const senhaOk    = validarCampo('cad-senha',     'err-cad-senha',     v => v.length >= 6);
+    const confirmaOk = validarCampo('cad-confirmar', 'err-cad-confirmar',
+      v => v === document.getElementById('cad-senha').value);
+
+    if (!nomeOk || !emailOk || !senhaOk || !confirmaOk) return;
+
+    showToast('🎉 Conta criada com sucesso! Bem-vindo(a)!');
+  }
+
+  // ── Força da senha ──
+  function verificarForca(val) {
+    const barras = document.getElementById('forca-barras');
+    const label  = document.getElementById('forca-texto');
+    if (!val) { barras.classList.remove('visivel'); label.textContent = ''; return; }
+    barras.classList.add('visivel');
+
+    let forca = 0;
+    if (val.length >= 6)  forca++;
+    if (val.length >= 10) forca++;
+    if (/[A-Z]/.test(val) && /[a-z]/.test(val)) forca++;
+    if (/[0-9!@#$%^&*]/.test(val)) forca++;
+
+    const cores   = ['#e74c3c', '#e8803a', '#f5c842', '#2d7a4f'];
+    const labels  = ['Muito fraca', 'Fraca', 'Boa', 'Forte'];
+    for (let i = 0; i < 4; i++) {
+      document.getElementById('b' + (i+1)).style.background = i < forca ? cores[forca-1] : 'var(--cinza-borda)';
+    }
+    label.textContent = labels[forca - 1] || '';
+    label.style.color = forca > 0 ? cores[forca-1] : 'var(--texto-suave)';
+  }
+
+  // ── Modal Esqueci ──
+  function openEsqueci() {
+    document.getElementById('modal-esqueci').classList.add('open');
+  }
+  function closeModal(id) {
+    document.getElementById(id).classList.remove('open');
+  }
+  document.querySelectorAll('.modal-overlay').forEach(o => {
+    o.addEventListener('click', e => { if (e.target === o) o.classList.remove('open'); });
+  });
+
+  function enviarRecuperacao() {
+    const ok = validarCampo('esqueci-email', 'err-esqueci-email', isEmail);
+    if (!ok) return;
+    closeModal('modal-esqueci');
+    showToast('📧 Link de recuperação enviado para o seu e-mail!');
+  }
+
+  // ── Toast ──
+  let toastTimer;
+  function showToast(msg, isErro = false) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.toggle('erro-toast', isErro);
+    t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.remove('show'), 3500);
+  }
+</script>
+</body>
+</html>

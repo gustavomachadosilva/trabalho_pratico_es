@@ -1,0 +1,15 @@
+[ {
+  "email" : "test@gmail.com",
+  "phone" : "912345678",
+  "password" : "123",
+  "type" : "senior",
+  "id" : 1,
+  "name" : "Test senior"
+}, {
+  "email" : "testmod@gmail.com",
+  "phone" : "912345678",
+  "password" : "123",
+  "type" : "mod",
+  "id" : 2,
+  "name" : "Test mod"
+} ]
